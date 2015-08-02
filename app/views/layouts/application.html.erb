@@ -2,11 +2,35 @@
 <html>
 <head>
   <title>Blog</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<header>
+		<nav class="be-red white large-padding">
+			<ul class="row center-xs around-xs">
+				<li class="col-md">
+					<h1 class="no-margin" id="logo">Blog Facilito</h1>
+				</li>
+
+				<li class="col-md">
+					<%= link_to "Inicio", root_path %>
+				</li>
+				<li class="col-md">
+					Diseño
+				</li>
+				<li class="col-md">
+					Programación
+				</li>
+				<li class="col-md">
+					Tecnología
+				</li>
+			</ul>
+		</nav>
+	</header>
 
 <%= yield %>
 
