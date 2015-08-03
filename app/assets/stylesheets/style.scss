@@ -43,12 +43,13 @@ a,a:visited{
 	padding: 5px 3px;
 }
 
-.field{
+.field,.top-space,.actions{
 	margin-top: 1em;
 }
 
-.top-space{
-	margin-top: 1em;
+
+.text-left{
+	text-align: left;
 }
 
 .form-control{
