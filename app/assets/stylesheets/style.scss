@@ -5,6 +5,28 @@ html,body{
 ul {
  list-style: none;
 }
+.btn{
+	background-color: inherit;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 1em;
+	padding: 10px 12px;
+}
+a,a:visited{
+	color: inherit;
+	text-decoration: none;
+}
+
+#logo{
+	font-size: 1.2em;
+}
+
+.no-margin{
+	margin: 0px;
+}
+
 .be-red{
 	background-color: #E74C3C;
 }
@@ -17,15 +39,16 @@ ul {
 	padding: 5px 3px;
 }
 
-a,a:visited{
-	color: inherit;
-	text-decoration: none;
+.field{
+	margin-top: 1em;
 }
 
-.no-margin{
-	margin: 0px;
-}
-
-#logo{
+.form-control{
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+	width: 100%;
+	display: block;
+	padding: 10px 0px;
 	font-size: 1.2em;
 }
