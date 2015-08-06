@@ -5,3 +5,12 @@ Visitas: <%= @article.visits_count %>
 <p><%= @article.body %></p>
 
 <%= link_to "Editar", edit_article_path(@article) %>
+
+<div class="field">
+	<h3>Comentarios</h3>
+	<% @article.comments.each do |comment| %>
+		<li><%= comment.body %> - <%= current_user.email %></li>
+	<% end %>
+	<%= render "comments/form" %>
+
+</div>
