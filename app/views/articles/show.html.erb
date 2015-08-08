@@ -8,9 +8,11 @@ Visitas: <%= @article.visits_count %>
 
 <div class="field">
 	<h3>Comentarios</h3>
+	<ul id="comments-box">
 	<% @article.comments.each do |comment| %>
 		<li><%= comment.body %> - <%= current_user.email %></li>
 	<% end %>
+	</ul>
 	<%= render "comments/form" %>
 
 </div>

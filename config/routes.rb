@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "welcome#index"
   resources :articles do
-    resources :comments, only: [:create, :update, :destroy]
+    resources :comments, only: [:create, :update, :destroy, :show]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
