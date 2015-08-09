@@ -16,6 +16,15 @@
 	</div>
 
 	<div class="field">
+		<label>Categorías</label>
+		<% @categories.each do |category| %>
+			<div class="field">
+				<%= check_box_tag "categories[]", category.id %> <%=category.name %>
+			</div>
+		<% end %>
+	</div>
+
+	<div class="field">
 		<%= f.submit "Guardar", class:"btn be-red white"%>
 	</div>
 <% end %>
