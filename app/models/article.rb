@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+	include AASM
+
 	belongs_to :user
 	has_many :comments
 	has_many :has_categories
@@ -21,6 +23,19 @@ class Article < ActiveRecord::Base
 	def update_visits_count
 		self.save if self.visits_count.nil?
 		self.update(visits_count: self.visits_count + 1)
+	end
+
+	aasm column: "state" do
+		state :in_draft, initial: true
+		state :published
+
+		event :publsh do
+			transitions from: :in_draft, to: :published
+		end
+
+		event :unpublish do
+			transitions from: :published, to: :in_draft
+		end
 	end
 
 	private
