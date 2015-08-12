@@ -15,6 +15,13 @@ class Article < ActiveRecord::Base
 	has_attached_file :cover, styles: { medium: "1280x720", thumb: "800x600"}
 	validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
+	scope :publicados, ->{ where(state: "published")}
+	scope :ultimos, ->{ order("created_at DESC").limit(10)}
+	
+	# def self.publicados # Mejor usando scopes
+	#	 Article.where(state: "published")
+	# end
+
 
 	def categories=(value) #Custom setter
 		@categories = value
@@ -29,7 +36,7 @@ class Article < ActiveRecord::Base
 		state :in_draft, initial: true
 		state :published
 
-		event :publsh do
+		event :publish do
 			transitions from: :in_draft, to: :published
 		end
 
